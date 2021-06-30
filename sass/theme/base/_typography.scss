@@ -1,0 +1,104 @@
+// Import fonts and fonts variables
+
+@font-face {
+    font-family: 'Noto Sans Bold';
+    src: url('../fonts/NotoSans-Bold.woff2') format('woff2'),
+        url('../fonts/NotoSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Regular';
+    src: url('../fonts/NotoSans.woff2') format('woff2'),
+        url('../fonts/NotoSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Italic';
+    src: url('../fonts/NotoSans-Italic.woff2') format('woff2'),
+        url('../fonts/NotoSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+$noto-bold: 'Noto Sans Bold';
+$noto-reg: 'Noto Sans Regular';
+$noto-italic: 'Noto Sans Italic';
+
+$font-main: 'Noto Sans Regular';
+$font-heading: 'Noto Sans Bold';
+
+
+
+body { 
+	font: {
+		size:$base-size;
+		family: $font-main;
+	}
+	-webkit-text-size-adjust: 100%;  //fix for iOS 
+    color: $dark;
+}
+
+p {
+    font-family: $font-main;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $dark;
+    margin-bottom: 20px;
+    font-weight: normal;
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+// reset
+a {
+    @include animate-fade;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a, button, input, textarea {
+    &:focus {
+        outline: none!important;
+    }
+}
+
+address {
+    margin:0px;
+    padding:0px;
+}
+
+i {
+    font-style: normal;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background: $yellow;
+  color: #fff;
+}
+
+::selection {
+  background: $yellow;
+  color: #fff;
+}

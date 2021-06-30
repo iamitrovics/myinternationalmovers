@@ -1,0 +1,100 @@
+#container-sizes {
+    /*max-width: 995px;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    /*padding-bottom: 80px;
+    @include breakpoint (desktop) {
+       padding-bottom: 40px;
+    }
+    @include media-breakpoint-only(lg) {
+        padding-bottom: 20px;
+    }
+    @include media-breakpoint-only(md) {
+        padding-bottom: 0px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 0px;
+    }*/
+    .container-photo {
+            padding-top: 65px;
+            margin-top: 40px;
+            border-top: 1px solid #EBEBEB;
+            &:first-of-type {
+                padding-top: 0;
+                margin-top: 0;
+                border-top: 0;
+            }
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            @include media-breakpoint-up(lg) {
+                max-width: 800px;
+            }
+        }
+    }
+    .container-table {
+        margin: 20px 0;
+        h2 {
+            @include heading-font3;
+            color: $yellow;
+            margin-bottom: 20px;
+            text-align: center;
+            @include media-breakpoint-down(sm) {
+                font-size: 1.3em;
+            }
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            thead {
+                tr {
+                    background: $yellow!important;
+                    color: #fff !important;
+                }
+            }
+            th, td {
+                padding: 12px;
+                text-align: center;
+                @include regular-text;
+                @include media-breakpoint-only(md) {
+                    font-size: 15px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 14px;
+                }
+            }
+            tr {
+                th {
+                    text-align: center;
+                    font-weight: normal;
+                    font-family: $noto-bold;
+                    text-transform: uppercase;
+                    padding: 18px 12px;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 14px;
+                    background: $yellow!important;
+                    @include media-breakpoint-down(sm) {
+                        font-size: 12px;
+                    }
+                }
+            }
+            tr {
+                &:nth-child(odd) {
+                    background-color: rgba(0, 0, 0, 0.04);
+                }
+                &:nth-child(even) {
+                    background-color: rgba(0, 0, 0, 0.02);
+                }
+                td {
+                    border-left: 1px solid #fff;
+                    &:first-of-type {
+                        border-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

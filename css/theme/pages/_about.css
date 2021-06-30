@@ -1,0 +1,9 @@
+#about-page .intro:after {
+  background-color: #eaeaea; }
+
+#about-page .about-photo .photo-caption {
+  display: block;
+  margin-top: 10px;
+  font-size: .857em;
+  line-height: 1.5;
+  font-style: italic; }
