@@ -224,6 +224,7 @@
         img {
             display: block;
             margin:0px auto;
+            width: 100%;
         }
     }
     .video-container {
@@ -808,6 +809,42 @@
                     }
                 }
             }
+        }
+    }
+}
+
+#bottom-form {
+    margin-bottom: 40px;
+    .quote-form {
+        max-width: 100%;
+    }
+}
+
+.quote-cta--single {
+    background:#EE3706;
+    padding:35px;
+    text-align: center;
+    border-radius:12px;
+    margin-bottom: 30px;
+    span.title {
+        display: block;
+        font-size: 32px;
+        line-height: 1.2;
+        color:$white;
+        margin-bottom: 15px;
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+        }
+    }
+    a.btn-cta {
+        @include yellow-btn;
+        width: 250px;
+        margin:0px auto;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 12px;
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
         }
     }
 }

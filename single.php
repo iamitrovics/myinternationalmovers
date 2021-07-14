@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="container">
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-lg-8 offset-lg-2">
 
                     <div class="blog-body">
 
@@ -102,7 +102,15 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         <div class="blog-video">
                                             <?php the_sub_field('video_code'); ?>                                        
                                         </div>
-                                        <!-- // video                                  -->
+                                    
+                                    <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                    <div class="quote-cta--single">
+                                        <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                        <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
+                                    </div>
+                                    <!-- // single  -->                                          
+                            
 
                                     <?php endif; ?>
                                 <?php endwhile; ?>
@@ -115,8 +123,28 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <!-- /.blog-body -->
                 </div>
                 <!-- /.col-md-12 -->
+
+
+                
             </div>
             <!-- /.row -->
+
+            <div id="bottom-form">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+
+                        <div class="quote-form">
+                            <div class="quote-form-in">
+                                <?php echo do_shortcode('[contact-form-7 id="1507" title="Homepage Quote Form"]'); ?>
+                            </div>
+                            <!-- /.quote-form-in -->
+                        </div>
+                        <!-- /.quote-form -->      
+
+                    </div>
+                </div>              
+            </div>
+
         </div>
         <!-- /.container -->
     </div>
