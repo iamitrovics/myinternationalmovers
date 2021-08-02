@@ -150,7 +150,9 @@
                 }
               }
             });
-          });             
+          });      
+          
+          $('.full-content a').attr("target","_blank");
 
         $('.date-picker-input').on('click', function(e) {
           e.preventDefault();

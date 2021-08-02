@@ -70,8 +70,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <?php if( have_rows('content_layout_blog') ): ?>
                                 <?php while( have_rows('content_layout_blog') ): the_row(); ?>
                                     <?php if( get_row_layout() == 'full_width_content' ): ?>
-
-                                        <?php the_sub_field('content_block'); ?>                               
+                                    <div class="full-content">
+                                        <?php the_sub_field('content_block'); ?>    
+                                    </div> <!-- full-content -->                           
                                         
                                     <?php elseif( get_row_layout() == 'intro_text' ): ?>
 
