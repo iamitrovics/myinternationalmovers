@@ -77,6 +77,9 @@
                             display: none;
                         }
                     }
+                    &.date-span {
+                        color: $blue;
+                    }
                 }
                 a {
                     @include regular-text;

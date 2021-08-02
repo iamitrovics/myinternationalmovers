@@ -81,7 +81,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                                     echo '<a href="'.$cat_link.'">'.$categories[0]->cat_name.'</a>' 
                                                     ?>                                                    
                                                     </span> 
-                                                    <span><a href="javascript:;"><?php echo get_the_date( 'F j, Y' ); ?></a></span>
+                                                    <span class="date-span"><?php echo get_the_date( 'F j, Y' ); ?></span>
                                                 </div>
                                                 <!-- /.category -->
                                                 <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
