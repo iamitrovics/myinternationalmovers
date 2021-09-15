@@ -251,6 +251,23 @@
             height: 100%;
         }
     }
+    .single-table {
+        @include media-breakpoint-down(sm) {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        th {
+            border: 1px solid;
+            background: $yellow;
+            color: #000;
+            padding: 3px 10px;
+        }
+        td {
+            border: 1px solid;
+            padding: 3px 10px;
+        }
+    }    
     .photo-caption {
         padding: 10px;
         text-align: center;
