@@ -39,11 +39,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                         
                         <div class="blog-headline">
                             <div class="blog-meta">
-                                <span>By 
-                                    <?php $author_id = get_the_author_meta( 'ID' ); ?>
-                                    <a href="<?php echo get_author_posts_url($author_id); ?>">
-                                    <?php the_author_meta( 'display_name', $author_id ); ?>   
-                                </a> Posted <a href="javascript:;"><?php echo get_the_date( 'F j, Y' ); ?></a> In 
+                                <span>
+                                    Posted <a href="javascript:;"><?php echo get_the_date( 'F j, Y' ); ?></a> In 
                                <?php
                                $categories = get_the_category();
                                $separator = ' ';
@@ -56,12 +53,20 @@ $container = get_theme_mod( 'understrap_container_type' );
                                }
                                ?>
                                 </span>
+                                <div class="author-desc">
+                                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                                    <div class="author-content">
+                                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+                                        <p><?php the_author_description(); ?></p>
+                                    </div>
+                                    <!-- /.author-content -->
+                                </div> 
                             </div>
                             <!-- /.blog-meta -->
-                            <div class="blog-action">
+                            <!-- <div class="blog-action">
                                 <a href="#"><i class="far fa-print"></i></a>
                             </div>
-                            <!-- /.blog-action -->
+                             /.blog-action -->
                         </div>
                         <!-- /.blog-headline -->
 
