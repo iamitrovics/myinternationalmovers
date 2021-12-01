@@ -1,0 +1,97 @@
+/*===============================
+=               FAQ             =
+===============================*/
+
+#faq {
+    padding-top: 75px;
+    padding-bottom: 95px;
+    @include bp(lg) {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+    @include bp(md) {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    @include bp(sm-down) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    #faq__accordion {
+        .faq-wrap {
+            border: 1px solid #ececec;
+            border-top:0;
+            >div {
+                display: none;
+                border:0;
+                padding: 20px;
+                display: none;
+                p {
+                    @include regular-text;
+                    color: #777777;
+                    strong {
+                        color: $yellow;
+                        font-family: $noto-bold;
+                    }
+                    a {
+                        font-family: $noto-bold;
+                        color: $blue;
+                        &:hover {
+                            color: $yellow;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                ul {
+                    @include list-style;
+                    li {
+                        margin-bottom: .5em;
+                        a {
+                            text-decoration: underline;
+                            &:hover {
+                                color: $yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h3 {
+            font-family: $noto-bold;
+            position: relative;
+            padding: 12px 30px 12px 15px;
+            color: #222222;
+            font-size: 0.813em;
+            line-height: 1.7;
+            cursor: pointer;
+            background-color: #f8f8f8;
+            @include animate-fade;
+            border:0;
+            margin: 0;
+            &:hover {
+                cursor: pointer;
+                color: $yellow;
+            }
+            &:focus {
+                outline: none!important;
+            }
+            &:after {
+                font-family: "icomoon";
+                content: "\e901";
+                @include centre(y);
+                right: 15px;
+                font-size: 18px;
+                font-weight: 900;
+                color: #adadad;
+                @include animate-fade;
+            }
+            &.active {
+                &:after {
+                    content: "\e90e";
+                }
+            }
+        }
+    }
+}
+
+

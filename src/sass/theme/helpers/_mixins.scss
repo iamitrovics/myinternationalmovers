@@ -1,0 +1,466 @@
+// Custom Mixins
+// fade animation
+@mixin animate-fade {
+    transition: .25s ease-in-out;
+}
+
+/*.fade {
+    transition: opacity 0.15s linear;
+}*/
+
+
+@-webkit-keyframes popup_content_bounce_in_right_left {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-2000px);
+        transform: translateX(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+
+    80% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes popup_content_bounce_in_right_left {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-2000px);
+        -ms-transform: translateX(-2000px);
+        transform: translateX(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+
+    80% {
+        -webkit-transform: translateX(-10px);
+        -ms-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    } 
+    100% {
+        transform: translateY(0);
+    } 
+}
+
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(0);
+    } 
+    100% {
+        transform: translateY(-100%);
+    } 
+}
+
+
+@-webkit-keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideOutDown {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+.slideOutDown {
+    -webkit-animation-name: slideOutDown;
+    animation-name: slideOutDown;
+}
+
+@mixin abs-position ($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin clear-pos {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+}
+
+// center vert horizontal
+@mixin centre($axis: "both") {
+    position: absolute;
+    @if $axis=="y" {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis=="x" {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis=="both" {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+// plceholder
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// clearfix
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// breakpoints
+@mixin bp($value) {
+    @if $value=='xs-down' {
+        @media only screen and (max-width: 575.98px) {
+            @content;
+        }
+    }
+    @else if $value=='sm-down' {
+        @media only screen and (max-width: 767.98px) {
+            @content;
+        }
+    }
+    @else if $value=='md-down' {
+        @media only screen and (max-width: 991.98px) {
+            @content;
+        }
+    }
+    @else if $value=='lg-down' {
+        @media only screen and (max-width: 1199.98px) {
+            @content;
+        }
+    }
+    @else if $value=='md' {
+        @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+            @content;
+        }
+    }
+    @else if $value=='lg' {
+        @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+            @content;
+        }
+    }
+    @else if $value=='small-lap' {
+        @media only screen and (min-width: 1025px) and (max-height: 767px) {
+            @content;
+        }
+    }
+    @else if $value=='desktop' {
+        @media only screen and (min-width: 1200px) and (max-width:1550px) {
+            @content;
+        }
+    }
+    @else if $value=='desktop-lg' {
+        @media only screen and (min-width: 1551px) {
+            @content;
+        }
+    }
+    @else if $value=='xs-up' {
+        @media only screen and (min-width: 576px) {
+            @content;
+        }
+    }
+    @else if $value=='sm-up' {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $value=='md-up' {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $value=='lg-up' {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and (min-width: 240px) and (max-width: $value) {
+            @content;
+        }
+    }
+}
+
+@mixin font-ico {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: absolute;
+}
+
+// overlay
+@mixin overlay($bg:transparent) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background:$bg;
+}
+
+
+@mixin page-title {
+    font-family: $noto-bold;
+    font-size: 3.750em;
+    line-height: 1.3;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 18px;
+    @include bp(desktop) {
+        font-size: 3.5em;
+    }
+    @include bp(lg) {
+        font-size: 3.2em;
+    }
+    @include bp(md-down) {
+        font-size: 3em;
+    }
+    @include bp(sm-down) {
+        font-size: 2.5em;
+    }
+}
+
+@mixin heading-font {
+    font-family: $noto-reg;
+    font-size: 1.500em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: #404040;
+    @include bp(desktop) {
+        font-size: 1.4em;
+    }
+    @include bp(lg) {
+        font-size: 1.3em;
+    }
+    @include bp(md) {
+        font-size: 1.3em;
+    }
+    @include bp(sm-down) {
+        font-size: 1.3em;
+    }
+}
+
+@mixin heading-font2 {
+    font-family: $noto-reg;
+    font-size: 1.375em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: #353535;
+    @include bp(desktop) {
+        font-size: 1.3em;
+    }
+    @include bp(lg) {
+        font-size: 1.2em;
+    }
+    @include bp(md-down) {
+        font-size: 1.2em;
+    }
+     @include bp(sm-down) {
+        font-size: 1.2em;
+    }
+}
+
+@mixin heading-font3 {
+    font-family: $noto-bold;
+    font-size: 2.000em;
+    line-height: 1.3;
+    margin-bottom: 11px;
+    @include bp(desktop) {
+        font-size: 1.9em;
+    }
+    @include bp(lg) {
+        font-size: 1.8em;
+    }
+    @include bp(md) {
+        font-size: 1.7em;
+    }
+    @include bp(sm-down) {
+        font-size: 1.6em;
+    }
+}
+
+@mixin yellow-btn {
+    font-family: $noto-bold;
+    padding: 12px 15px;
+    line-height: 13px;
+    display: flex;
+    font-size: 1em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: $yellow;
+    @include animate-fade;
+    letter-spacing: 1px;
+    border: 0;
+    text-transform: uppercase;
+    &:hover {
+        background-color: #252525;
+    }
+}
+
+@mixin input-style {
+    display: block;
+    font-family: $font-main;
+    width: 100%;
+    height: 32px;
+    color: #767676;
+    background-color: #fdfdfd;
+    border: 0;
+    border-radius: 0;
+    padding: 5px 4px;
+    font-size: 1em;
+    @include animate-fade;
+    &:focus {
+        outline: none!important;
+        background-color: #fff;
+    }
+}
+
+@mixin input-label {
+    display: block;
+    color: #000;
+    font-family: $noto-bold;
+    font-size: 16px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    @include bp(sm-down) {
+        font-size: 14px;
+        font-family: $noto-reg;
+    }
+}
+
+@mixin regular-text {
+    font-family: $noto-reg;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $dark;
+}
+
+@mixin list-style {
+    margin-left: 35px;
+    margin-bottom: 1em;
+    padding: 0;
+    list-style-type: disc;
+    li {
+        @include regular-text;
+        a {
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+        }
+    }
+}

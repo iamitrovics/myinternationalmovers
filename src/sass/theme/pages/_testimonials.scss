@@ -1,0 +1,91 @@
+#testimonials-page {
+    .col-lg-8 {
+        @include bp(lg-up) {
+            flex: 0 0 64%;
+            max-width: 64%;
+        }
+    }
+    .col-lg-4 {
+        @include bp(lg-up) {
+            flex: 0 0 36%;
+            max-width: 36%;
+        }
+    }
+    .testimonials-list {
+        max-width: 662px;
+        width: 100%;
+        @include bp(md-down) {
+            max-width: 100%;
+        }
+        .testimonial-item {
+            border: 1px solid #e3e6e9;
+            border-radius: 5px;
+            background: #fff;
+            padding: 2.57143rem;
+            margin-bottom: 35px;
+            &:nth-of-type(even) {
+                background: #f5f8fc;
+            }
+            @include bp(sm-down) {
+                padding: 1.5rem;
+            }
+            p {
+                @include regular-text;
+                strong {
+                    font-family: $noto-bold;
+                }
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+            span.subject {
+                display: block;
+                @include regular-text;
+                color: $dark;
+            }
+            span.author {
+                display: block;
+                @include regular-text;
+                font-family: $noto-bold;
+                color: $dark;
+            }
+            span.rating {
+                @include regular-text;
+                display: block;
+                color: $dark;
+            }
+            .star-area {
+                color: $yellow;
+                font-size: 16px;
+                display: block;
+            }
+        }
+    }
+    .testimonials-aside {
+        h3 {
+            @include heading-font;
+            text-transform: capitalize;
+            margin-bottom: 26px;
+        }
+        .quote-form {
+            &-in {
+                background-color: #fff;
+                padding: 0;
+            }
+            form {
+                input[type=text], input[type=number], input[type=email], input[type=tel], textarea, .bootstrap-select .btn, textarea {
+                    height: 34px;
+                    border: 1px solid #e3e3e3;
+                }
+                label {
+                    color: $dark;
+                }
+                textarea {
+                    height: 160px;
+                }
+            }
+        }
+    }
+}
+
+

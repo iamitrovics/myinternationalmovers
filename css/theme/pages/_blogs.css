@@ -1,9 +1,0 @@
-#blogs .blog-item {
-  margin-bottom: 40px; }
-  #blogs .blog-item .blog-photo i {
-    opacity: 0;
-    @Include animate-fade; }
-  #blogs .blog-item .blog-photo a {
-    display: block; }
-    #blogs .blog-item .blog-photo a:hover i {
-      opacity: 1; }

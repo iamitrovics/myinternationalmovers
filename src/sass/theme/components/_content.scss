@@ -1,0 +1,535 @@
+.page-wrapper {
+    @include animate-fade;
+}
+
+.section-area {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    @include bp(desktop) {
+    }
+    @include bp(lg) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include bp(md) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @include bp(sm-down) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .intro {
+        text-align: center;
+        padding-bottom: 30px;
+        h2 {
+            @include heading-font;
+        }
+        p {
+            @include regular-text;
+            margin-bottom: 20px;
+        }
+    }
+}
+body {
+	&.fixed {
+		position: fixed!important;
+	}
+}
+.show-lg {
+	@include bp(sm-down) {
+		display: none!important;
+	}
+}
+
+.show-sm {
+	@include bp(sm-up) {
+		display: none!important;
+	}
+}
+
+.bootstrap-select {
+    width: 100%!important;
+    .btn {
+        width: 100%;
+        &:after {
+            margin: 0;
+            border:0;
+            @include font-ico;
+            @include centre(y);
+            content: "\e90d";
+            font-weight: 400;
+            color: #000;
+            font-size: 18px;
+            right: 10px;
+            @include animate-fade;
+        }
+    }
+    &.open {
+        .btn {
+            &:after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+    .dropdown-item {
+        padding: 0.25rem 0.5rem;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        background-color: $yellow;
+    }
+    .dropdown-toggle .filter-option {
+        height: auto;
+    }
+}
+
+.zebra_tooltips_below {
+    color: #000;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 15px;
+    position: relative;
+    &:hover {
+        color: $yellow;
+    }
+}
+
+.Zebra_Tooltip {
+    z-index: 999999;
+    @include bp(sm-down)  {
+        width: 99%;
+    }
+}
+
+.Zebra_Tooltip .Zebra_Tooltip_Message {
+    font-size: 16px;
+    font-family: Geneva,'Lucida Sans','Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+    background-color: rgb(102, 102, 102);
+    @include bp(md) {
+        font-size: 15px;
+    }
+    @include bp(sm-down) {
+        font-size: 14px;
+    }
+}
+
+.Zebra_Tooltip .Zebra_Tooltip_Arrow.Zebra_Tooltip_Arrow_Top div {
+    border-color: transparent transparent rgb(102, 102, 102)!important;
+}
+
+.Zebra_Tooltip .Zebra_Tooltip_Arrow.Zebra_Tooltip_Arrow_Bottom div {
+    border-color: rgb(102, 102, 102) transparent transparent!important;
+}
+
+// Quote form
+
+.quote-form {
+    max-width: 470px;
+    &-in {
+        padding: 20px;
+        background: #C0E8F8;
+        .row {
+            padding-left: 7px;
+            padding-right: 7px;
+            [class*="col-"] {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .col-md-6 {
+                @include bp(sm-down) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+        }
+        .form-title {
+            display: block;
+            @include heading-font3;
+            color: #404040;
+            margin-bottom: 18px;
+            text-align: center;
+            @include bp(desktop) {
+            }
+            @include bp(lg) {
+            }
+            @include bp(md) {
+            }
+            @include bp(sm-down) {
+            }
+        }
+        form {
+            .form-group {
+                margin-bottom: 12px;
+            }
+            input[type=text], input[type=number], input[type=email], input[type=tel], textarea, .bootstrap-select .btn {
+                @include input-style;
+            }
+            .control--radio {
+                display: inline-block;
+                letter-spacing: 0;
+                font-size: 14px;
+                color: #000;
+            }
+            .bootstrap-select .btn {
+                padding-right: 30px;
+                padding-top: 0;
+                padding-bottom: 0;
+                color: #000;
+            }
+            .control--checkbox {
+                margin-top: 20px;
+                letter-spacing: 0;
+                font-size: 14px;
+                color: #000;
+                @include bp(sm-down) {
+                    margin-top: 0;
+                }
+            }
+            textarea {
+                height: 160px;
+            }
+        }
+        label, span.label {
+            @include input-label;
+        }
+        input[type=submit] {
+            @include yellow-btn;
+        }
+    }
+}
+#cookie-notice {
+    background-color: rgba(38,170,191,0.8);
+    z-index: 9997;
+    position: fixed;
+    min-width: 45%;
+    height: auto;
+    font-size: 13px;
+    letter-spacing: 0;
+    left: 0;
+    text-align: center;
+    font-family: $noto-reg;
+    bottom: 0;
+    padding: 0px 30px;
+    @include bp(sm-down) {
+        display: none;
+    }
+    &.slide-up {
+        -webkit-animation-name: slideInUp;
+        animation-name: slideInUp;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    &.slide-down {
+        -webkit-animation-name: slideOutDown;
+        animation-name: slideOutDown;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    &-in {
+        padding: 15px 30px;
+        @include bp(md) {
+        }
+        @include bp(sm-down) {
+            padding: 15px 20px;
+        }
+    }
+    .notice-text, .notice-btns {
+        display: inline-block; 
+    }
+    p {
+        color: #fff;
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .notice-text {
+        margin-bottom: 6px;
+    }
+    .notice-btns {
+        @include bp(sm-down) {
+            margin-top: 15px;
+        }
+        a {
+            font-family: $noto-bold;
+            font-size: 13px;
+            letter-spacing: .25px;
+            line-height: 13px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            touch-action: manipulation;
+            white-space: nowrap;
+            outline: 0;
+            box-shadow: none;
+            text-shadow: none;
+            border: none;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #218796;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 0 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            &:first-of-type {
+                @include bp(sm-down) {
+                    margin-left: 0;
+                }
+            }
+            &:hover {
+                background-color: #707070;
+                color: #ffffff;
+                box-shadow: inset 0 0 0 99999px rgba(0,0,0,.05);
+            }
+        }
+    }
+    #close-notice {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -10px;
+        width: 15px;
+        height: 15px;
+        opacity: .5;
+        padding: 10px;
+        outline: 0;
+        &:before, &:after {
+            position: absolute;
+            content: ' ';
+            height: 15px;
+            width: 2px;
+            top: 3px;
+            background-color: #fff;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}    
+// Form styling
+.wpcf7 form .wpcf7-response-output {
+    border:none;
+    margin:0px;
+    padding:0px;
+    color:red;
+    margin-bottom: 20px;
+}
+
+.wpcf7-not-valid-tip {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+form .wpcf7-not-valid {
+    background:#ffe0e0!important;
+}
+
+// tooltip Modal
+.disclaimer-modal {
+    .close {
+        position: absolute;
+        top:20px;
+        right:20px;
+        color:$white;
+    }
+    .modal {
+        border-radius:0px;
+        padding:30px;
+        background:rgba(38,170,191,0.99);
+        color:$white;
+        p {
+            color:$white;
+            a {
+                color:$orange;
+            }
+            &:last-of-type {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+#city-info-block {
+    h3 {
+        color:$white!important;
+    }
+}
+
+.map-wrapper {
+    iframe {
+        max-width:100%;
+        width: 100%;
+    }
+}
+
+// Datepicker
+.ui-datepicker {
+    width:360px;
+    padding:0px;
+    border:none;
+    border:1px solid rgb(54, 54, 54);
+    .ui-datepicker-header {
+        border:none;
+        background:$yellow;
+        .ui-datepicker-prev {
+            left:30px;
+            top:20px;
+            width: 20px;
+            height: 22px;
+            background:url('../img/ico/white-arrow-left.svg') no-repeat;
+            background-position: center center;
+            display: block;
+            opacity: 1;
+            background-size: contain;
+            &:hover {
+                cursor: pointer;
+                border:none;
+                opacity: 0.7;
+            }
+            &:focus {
+                outline: 0;
+            }
+            span {
+                display: none;
+            }
+        }
+        .ui-datepicker-next {
+            right:30px;
+            top:20px;
+            width: 20px;
+            height: 22px;
+            background:url('../img/ico/white-arrow-right.svg') no-repeat;
+            background-position: center center;
+            display: block;
+            opacity: 1;
+            background-size: contain;
+            &:hover {
+                cursor: pointer;
+                border:none;
+                opacity: 0.7;
+            }
+            &:focus {
+                outline: 0;
+            }
+            span {
+                display: none;
+            }
+        }        
+        .ui-datepicker-title {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            margin:0px;
+            text-transform: uppercase;
+            color:$white;
+            font-size: 18px;
+            font-family:$font-heading;
+        }
+    }
+    .ui-datepicker-calendar {
+        margin:0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        border-collapse: inherit;
+        padding-bottom: 50px;
+        &:after {
+            content:'lower rates';
+            position: absolute;
+            bottom:20px;
+            right:20px;
+            font-family: $font-heading;
+            font-size: 18px;
+            background:$green;
+            color:$white;
+            border-radius: 6px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        thead {
+            tr th{
+                border-bottom: 2px solid #e5e9e5;
+            }
+            th {
+                color:rgb(5, 49, 100);
+                text-transform: uppercase;
+                font-size: 17px;
+            }
+        }
+        .ui-state-default {
+            border:none;
+            background:$white;
+            padding:0px;
+            text-align: center;
+            color:#000;
+            font-size: 17px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+        td.ui-state-disabled {
+            opacity: 0.2;
+            color:#c4c4c4;
+        }
+        td.ui-datepicker-other-month  {
+            opacity: 0.2;
+            color:#c4c4c4;
+        }
+        td.ui-datepicker-today {
+            text-align: center;
+            a {
+                background:$yellow;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                padding:0px;
+                color:$white;
+                line-height: 40px;
+                display: inline-block;
+            }
+        }
+        td.event.ui-datepicker-today {
+            a {
+                background:$green;
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        a.ui-state-active {
+            color:$red!important;
+        }
+        .event {
+            // border-bottom: 7px solid #ffd366;
+            // border-radius: 2px;
+            a {
+                position: relative;
+                &:after {
+                    width: 100%;
+                    height: 5px;
+                    background:$green;
+                    content:'';
+                    display: block;
+                    bottom:0px;
+                    left:0px;
+                    border-radius: 8px;
+                    position: absolute;
+                    left:0px;
+                    bottom:-3px;
+                }
+            }
+        }
+    }
+}

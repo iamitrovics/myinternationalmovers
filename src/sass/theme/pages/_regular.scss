@@ -1,0 +1,126 @@
+#regular-page {
+    h2 {
+        font-family: $noto-bold;
+        font-size: 2.125em;
+        line-height: 1.3;
+        margin-bottom: 16px;
+        color: $yellow;
+        @include bp(desktop) {
+            font-size: 2em;
+        }
+        @include bp(lg) {
+            font-size: 1.9em;
+        }
+        @include bp(md) {
+            font-size: 1.8em;
+        }
+        @include bp(sm-down) {
+            font-size: 1.7em;
+        }
+    }
+    h3 {
+        @include heading-font;
+        margin-top: 40px;
+    }
+    h4 {
+        @include heading-font2;
+    }
+    .row {
+        &:first-of-type {
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+    p {
+        @include regular-text;
+        color: #777777;
+        strong {
+            color: $yellow;
+            font-family: $noto-bold;
+        }
+        a {
+            font-family: $noto-bold;
+            color: $blue;
+            text-decoration: none;
+            &:hover {
+                color: $yellow;
+                text-decoration: none;
+            }
+        }
+    }
+    ul {
+        @include list-style;
+        margin-bottom: 30px;
+        li {
+            margin-bottom: 5px;
+            strong {
+                font-weight: normal;
+                font-family: $noto-bold;
+                color: $yellow;
+            }
+            a {
+                color: #05317f;
+                font-family: $noto-reg;
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+#thankyou {
+    &-in {
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+        @include bp(lg) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        @include bp(md) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        @include bp(sm-down) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        h1 {
+            font-family: $noto-reg;
+            text-align: center;
+            font-size: 2.625em;
+            line-height: 1.3;
+            color: #404040;
+            text-transform: none;
+            margin-bottom: 20px;
+            @include bp(desktop) {
+                font-size: 2.5em;
+            }
+            @include bp(lg) {
+                font-size: 2.3em;
+            }
+            @include bp(md) {
+                font-size: 2.1em;
+            }
+            @include bp(sm-down) {
+                font-size: 1.8em;
+            }
+        }
+        img {
+            display: block;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {
+            @include regular-text;
+            color: $dark;
+        }
+    }
+}

@@ -95,23 +95,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<a id="go-to-top" href="javascript:;"><i class="fas fa-chevron-up"></i></a>
 
-	<!-- Modal -->
-	<div class="modal fade" id="tooltip-modal" tabindex="-1" role="dialog" aria-labelledby="tooltip-modalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-			<div class="modal-body">
-			
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true"><i class="fal fa-times"></i></span>
-				</button>
-
+	<div class="modal-overlay disclaimer-modal" data-my-element="tooltip-modal">
+		<div class="modal" data-my-element="tooltip-modal">
+			<a class="close-modal">
+				<img src="<?php bloginfo('template_directory'); ?>/img/ico/close.svg" alt="">
+			</a>
+			<!-- close modal -->
+			<div class="disclaimer-modal-wrap">
 				<?php the_field('form_privacy_popup', 'options'); ?>
-
 			</div>
-			<!-- // body  -->
-			</div>
+			<!-- /.disclaimer-modal-wrap -->
 		</div>
-	</div>	
+		<!-- modal -->
+	</div>
+
+	<div id="fixed-cta">
+		
+		<a href="tel:<?php the_field('phone_number_side_cta', 'options'); ?>">
+			<em><img src="<?php bloginfo('template_directory'); ?>/img/ico/phone.svg" alt=""></em>
+			<div class="phone-text">
+				<small class="label">Get a Free Estimate</small>
+				<span><?php the_field('phone_number_side_cta', 'options'); ?></span>
+			</div>
+			<!-- // text  -->
+		</a>
+
+	</div>
+	<!-- // fixed cta  -->		
 	
     <?php wp_footer(); ?>
 
