@@ -1161,3 +1161,42 @@
         }
     }    
 }
+.blog-filters {
+    margin-top: 75px;
+    @include bp(lg-down) {
+        margin-top: 40px;
+    }
+    ul {
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            @include bp(sm-down) {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-right: 10px;
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            a {
+                display: block;
+                color: #fff;
+                border-radius: 8px;
+                background-color: $black;
+                padding: 6px 32px;
+                padding-top: 5px;
+                text-transform: uppercase;
+                text-align: center;
+                &.active, &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                }
+                @include bp(sm-down) {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}
