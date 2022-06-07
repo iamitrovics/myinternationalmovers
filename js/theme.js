@@ -8011,6 +8011,19 @@ if (typeof jQuery === 'undefined') {
 
         e.preventDefault();
       });
+    });
+    $(".default-accordion .faq-box > h4").on("click", function (e) {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).siblings(".default-accordion .faq-box div").slideUp(200);
+      } else {
+        $(".default-accordion .faq-box > h4").removeClass("active");
+        $(this).addClass("active");
+        $(".default-accordion .faq-box div").slideUp(200);
+        $(this).siblings(".default-accordion .faq-box div").slideDown(200);
+      }
+
+      e.preventDefault();
     }); // desktop multilevel menu
 
     $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
