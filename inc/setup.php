@@ -51,6 +51,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 				'supportmenu' => __( 'Support Menu', 'understrap' ),
 				'servicesmenu' => __( 'Services Menu', 'understrap' ),
 				'citiesmenu' => __( 'Cities Menu', 'understrap' ),
+				'mobile' => __( 'Mobile Menu', 'understrap' ),
 			)
 		);
 

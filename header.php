@@ -76,45 +76,44 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- /.sticky-popup -->
 	</div>
 	<!-- /#fixed-sidenav -->
+
 	<div class="menu-overlay"></div>
-	<div class="main-menu-sidebar">
-		<header class="visible-xs visible-sm visible-md">
-			<a href="javascript:;" class="close-menu-btn"><img src="<?php bloginfo('template_directory'); ?>/img/ico/close.svg" alt=""></a>
+	<div class="main-menu-sidebar visible-xs visible-sm visible-md" id="menu">
+
+		<header>
+			<a href="javascript:;" class="close-menu-btn"><img src="<?php bloginfo('template_directory'); ?>/img/ico/close-x.svg" alt=""></a>
 		</header>
-		<!-- // header  -->        
-		<div id="mobile__brand">
-			<img src="<?php the_field('mobile_logo_gen', 'options'); ?>" alt="">
-		</div>
-		<!-- // brand  -->
-		<div id="menu">
-			<ul>
+		<!-- // header  -->
 
-				<?php if( have_rows('menu_items_mobile', 'options') ): ?>
-					<?php while( have_rows('menu_items_mobile', 'options') ): the_row(); ?>
 
-						<?php if (get_sub_field('item_type') == 'Single Item') { ?>
-							<li><a href="<?php the_sub_field('item_link'); ?>"><?php the_sub_field('item_label'); ?></a></li>
-						<?php } elseif (get_sub_field('item_type') == 'Dropdown') { ?>
-							<li>
-								<a href="<?php the_sub_field('item_link'); ?>"><?php the_sub_field('item_label'); ?></a>
-								<ul>
-									<?php if( have_rows('dropdown_items') ): ?>
-										<?php while( have_rows('dropdown_items') ): the_row(); ?>
-											<li><a href="<?php the_sub_field('link_to_page'); ?>"><?php the_sub_field('label_dropdown'); ?></a></li>
-										<?php endwhile; ?>
-									<?php endif; ?>
-								</ul>
-							</li>
-						<?php } ?>   
+		<nav id="sidebar-menu-wrapper">
+			<img src="<?php the_field('website_logo_general', 'options'); ?>" alt="" class="mobile-logo">
+			<div id="menu">    
+				<ul class="nav-links">
+					<?php
+					wp_nav_menu( array(
+						'menu'              => 'mobile',
+						'theme_location'    => 'mobile',
+						'depth'             => 2,
+						'container'         => false,
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => false,
+						'menu_class'        => 'nav navbar-nav',
+						'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+						'items_wrap' => '%3$s',
+						'walker'            => new wp_bootstrap_navwalkermobile())
+					);
+					?>  
+				</ul>
+			</div>
+			<!-- // menu  -->
 
-					<?php endwhile; ?>
-				<?php endif; ?>
+		</nav> 
+		<!-- // sidebar menu wrapper  -->
 
-			</ul>
-		</div>
-		<!-- // menu  -->
 	</div>
-	<!-- // mobile menu  -->
+	<!-- // main menu sidebar  -->		
+
 	<div class="page-wrapper">
 		<div id="menu_area" class="menu-area">
 
@@ -172,14 +171,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 									</ul>
 									<!-- /.navbar-nav -->
-									<div id="top__mobile">
-										<a href="javascript:;" class="menu-btn">
+
+									<div id="mobile-menu--btn" class="d-lg-none">
+										<a href="javascript:;">
 											<span></span>
 											<span></span>
 											<span></span>
+											<div class="clearfix"></div>
 										</a>
 									</div>
-									<!-- /#top__mobile -->
+									<!-- // mobile  -->	
+
 								</div>
 								<!-- /.navbar-collapse -->
 							</nav>
