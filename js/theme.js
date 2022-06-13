@@ -7989,7 +7989,6 @@ if (typeof jQuery === 'undefined') {
     setTimeout(function () {
       $(".sticky-popup .popup-header").trigger('click');
     }, 45000);
-    $('#cookie-notice').addClass('slide-up');
     $('#close-notice, #accept-cookie').click(function (e) {
       e.preventDefault();
       $("#cookie-notice").removeClass("slide-up");

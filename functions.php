@@ -138,18 +138,21 @@ function skip_mail_when_testing($f){
 add_filter('wpcf7_skip_mail','skip_mail_when_testing');
 
 
+if ( ! is_admin() ) {
 
-function fb_filter_query( $query, $error = true ) {
+	function fb_filter_query( $query, $error = true ) {
 
-    if ( is_search() ) {
-        $query->is_search = false;
-        $query->query_vars['s'] = false;
-        $query->query['s'] = false;
+		if ( is_search() ) {
+			$query->is_search = false;
+			$query->query_vars['s'] = false;
+			$query->query['s'] = false;
 
-        if ( $error == true )
-            $query->is_404 = true;
-    }
+			if ( $error == true )
+				$query->is_404 = true;
+		}
+	}
+
+	add_action( 'parse_query', 'fb_filter_query' );
+	add_filter( 'get_search_form', function() { return null;} );
+
 }
-
-add_action( 'parse_query', 'fb_filter_query' );
-add_filter( 'get_search_form', function() { return null;} );

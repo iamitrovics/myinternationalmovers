@@ -125,6 +125,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
     <?php wp_footer(); ?>
 
+  <script>
+    if (!sessionStorage.alreadyClicked) {
+        jQuery('#cookie-notice').addClass('slide-up');
+        sessionStorage.alreadyClicked = 1;
+    }
+  </script> 	
+
 	<?php if( get_field('footer_code_snippet', 'options') ): ?>
 		<?php the_field('footer_code_snippet', 'options'); ?>
 	<?php endif; ?>

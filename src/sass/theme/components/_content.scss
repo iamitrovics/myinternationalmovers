@@ -210,6 +210,7 @@ body {
     font-family: $noto-reg;
     bottom: 0;
     padding: 0px 30px;
+    display: none;
     @include bp(sm-down) {
         display: none;
     }
@@ -220,6 +221,7 @@ body {
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
+        display: block!important;
     }
     &.slide-down {
         -webkit-animation-name: slideOutDown;
@@ -228,6 +230,7 @@ body {
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
+        opacity: 0;
     }
     &-in {
         padding: 15px 30px;
