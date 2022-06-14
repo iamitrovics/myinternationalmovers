@@ -7949,12 +7949,7 @@ if (typeof jQuery === 'undefined') {
 }(document, jQuery);
 (function ($) {
   jQuery(document).ready(function () {
-    setTimeout(function () {
-      $(".page-wrapper").css({
-        "padding-top": $("#top-bars").height()
-      });
-    }, 600); // Sticky header
-
+    // Sticky header
     jQuery(window).scroll(function () {
       if ($(this).scrollTop() > 60) {
         $('#menu_area').addClass("sticky");

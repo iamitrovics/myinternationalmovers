@@ -1,5 +1,9 @@
 .page-wrapper {
-    @include animate-fade;
+//    padding-top: 169px;
+    padding-top: 35px;
+    @include bp(sm-down) {
+        padding-top: 0px;
+    }
 }
 
 .section-area {
