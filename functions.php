@@ -157,6 +157,7 @@ if ( ! is_admin() ) {
 
 }
 
+
 if (current_user_can('manage_options')) {
 	function lwp_2629_user_edit_ob_start() {ob_start();}
 	add_action( 'personal_options', 'lwp_2629_user_edit_ob_start' );
