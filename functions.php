@@ -192,3 +192,20 @@ if (current_user_can('manage_options')) {
 	}
 	add_action( 'user_profile_update_errors', 'lwp_2629_profile_update', 10, 3 );
 	}
+
+// fix canonical on paginated
+function remake_wpseo_canonical($canonical) {
+	global $post;
+
+	$paged = get_query_var('paged');
+
+	if (isset($paged) && (int) $paged > 0){
+		return trailingslashit(trailingslashit($canonical) . 'page/' . $paged);
+
+		return $url;
+	}
+
+	return $canonical;
+}
+
+add_filter('wpseo_opengraph_url', 'remake_wpseo_canonical');
