@@ -1,22 +1,23 @@
 // Defining requirements
 var gulp = require( 'gulp' );
 var plumber = require( 'gulp-plumber' );
-var sass = require( 'gulp-sass' );
 var babel = require( 'gulp-babel' );
 var postcss = require( 'gulp-postcss' );
 var rename = require( 'gulp-rename' );
 var concat = require( 'gulp-concat' );
 var uglify = require( 'gulp-uglify' );
-var imagemin = require( 'gulp-imagemin' );
+var imagemin = import( 'gulp-imagemin' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var browserSync = require( 'browser-sync' ).create();
-var del = require( 'del' );
+var del = import( 'del' );
 var cleanCSS = require( 'gulp-clean-css' );
 var autoprefixer = require( 'autoprefixer' );
 
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
 var paths = cfg.paths;
+
+const sass = require('gulp-sass')(require('sass'));
 
 /**
  * Compiles .scss to .css files.
@@ -189,15 +190,13 @@ gulp.task( 'scripts', function() {
 		// paths.dev + '/js/skip-link-focus-fix.js',
 		// Adding currently empty javascript file to add on for your own themes´ customizations
 		// Please add any customizations to this .js file only!
-		paths.dev + '/js/slick.js',
-		paths.dev + '/js/jquery-ui.min.js',
-		paths.dev + '/js/dropdown.min.js',
-		paths.dev + '/js/bootstrap-select.min.js',
-		//paths.dev + '/js/jquery.matchHeight.js',
-		paths.dev + '/js/sliding-menu.js',
 		
-		// paths.dev + '/js/moment/moment-with-locales.min.js',
+		paths.dev + '/js/jquery-ui.min.js',
 		paths.dev + '/js/jquery.fancybox.min.js',
+		paths.dev + '/js/jquery.waypoints.min.js',
+		paths.dev + '/js/jquery.counterup.min.js',
+		paths.dev + '/js/jquery.matchHeight.js',
+		paths.dev + '/js/slick.js',
 		paths.dev + '/js/custom-javascript.js'
 	];
 	gulp
