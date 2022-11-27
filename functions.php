@@ -74,14 +74,14 @@ function init_remove_support(){
 }
 
 
-function wpex_remove_cpt_slug_services( $post_link, $post, $leavename ) {
-	if ( 'services' != $post->post_type || 'publish' != $post->post_status ) {
-		return $post_link;
-	}
-	$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
-	return $post_link;
-}
-add_filter( 'post_type_link', 'wpex_remove_cpt_slug_services', 10, 3 );
+// function wpex_remove_cpt_slug_services( $post_link, $post, $leavename ) {
+// 	if ( 'services' != $post->post_type || 'publish' != $post->post_status ) {
+// 		return $post_link;
+// 	}
+// 	$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+// 	return $post_link;
+// }
+// add_filter( 'post_type_link', 'wpex_remove_cpt_slug_services', 10, 3 );
 
 
 /**
