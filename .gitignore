@@ -30,3 +30,6 @@ acf-json/
 phpcs.xml.dist
 .phpcs.xml
 .phpcs-cache
+gulpconfig.json
+gulpfile.json
+package.json
